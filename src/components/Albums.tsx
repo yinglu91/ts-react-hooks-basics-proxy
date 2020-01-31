@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Counter from './CounterUseReducer';
 
 export interface Album {
   userId: number;
@@ -24,6 +25,13 @@ const Albums: React.FC = () => {
   return (
     <section className='row my-2'>
       <ul className='col-md-6 offset-md-3 list-group'>
+        <li className='list-group-item d-flex justify-content-between'>
+          <Link to={`/counter`} className='btn btn-primary'>
+            Go To Counter
+          </Link>
+          <br />
+          <br />
+        </li>
         {albums.map(album => (
           <li
             key={album.id}
